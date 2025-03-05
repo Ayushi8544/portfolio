@@ -6,33 +6,47 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     const message = document.getElementById('message').value;
 
     if (name && email && message) {
+        // Simulate sending the message (or send to a server via AJAX)
         alert("Your message has been sent successfully!");
-        // You can add actual form submission logic here
+        // Reset the form
+        document.getElementById('contactForm').reset();
     } else {
         alert("Please fill in all fields.");
     }
 });
-
 function showProjectDetails(projectName) {
     let demoLink = '';
     let repoLink = '';
     let imageUrl = '';
     
     if (projectName === 'weather') {
-        demoLink = 'https://ayushi8544.github.io/weatherapp/'; // Replace with actual demo URL
-        repoLink = 'https://github.com/your-username/weather-app'; // Replace with actual repo URL
-        imageUrl = 'https://play-lh.googleusercontent.com/ASLF3Ze14IVg07ZFFnaj_q-1-94uFujM5oxKStt2sJIaDfUdshf2yHttlQ_2oTyv6Q'; // Replace with actual image URL
+        demoLink = 'https://ayushi8544.github.io/weatherapp/';
+        repoLink = 'https://github.com/your-username/weather-app';
+        imageUrl = 'https://play-lh.googleusercontent.com/ASLF3Ze14IVg07ZFFnaj_q-1-94uFujM5oxKStt2sJIaDfUdshf2yHttlQ_2oTyv6Q';
     } else if (projectName === 'todo') {
-        demoLink = 'https://your-todo-app-demo-link.com'; // Replace with actual demo URL
-        repoLink = 'https://github.com/your-username/todo-list'; // Replace with actual repo URL
-        imageUrl = 'https://i.ytimg.com/vi/G0jO8kUrg-I/sddefault.jpg'; // Replace with actual image URL
+        demoLink = 'https://your-todo-app-demo-link.com';
+        repoLink = 'https://github.com/your-username/todo-list';
+        imageUrl = 'https://i.ytimg.com/vi/G0jO8kUrg-I/sddefault.jpg';
     }
 
-    // Display the project details (demo link, repo link, and image)
-    alert(`Project: ${projectName}\n\nLive Demo: ${demoLink}\nRepo: ${repoLink}`);
-    
-    // Optionally, you could display the image on the page or in a modal
-    let imageContainer = document.createElement('div');
-    imageContainer.innerHTML = `<h3>Project Image:</h3><img src="${imageUrl}" alt="${projectName}" width="300" height="200">`;
-    document.body.appendChild(imageContainer);
+    // Display project details in a modal
+    const modalContent = `
+        <div class="modal-overlay">
+            <div class="modal">
+                <h2>Project: ${projectName}</h2>
+                <img src="${imageUrl}" alt="${projectName}" width="300" height="200">
+                <p><strong>Live Demo:</strong> <a href="${demoLink}" target="_blank">${demoLink}</a></p>
+                <p><strong>Repo Link:</strong> <a href="${repoLink}" target="_blank">${repoLink}</a></p>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+    `;
+
+    // Insert modal content into the body
+    document.body.insertAdjacentHTML('beforeend', modalContent);
+
+    // Add close functionality
+    document.querySelector('.close-modal').addEventListener('click', function() {
+        document.querySelector('.modal-overlay').remove();
+    });
 }
