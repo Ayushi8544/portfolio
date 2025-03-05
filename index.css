@@ -1,238 +1,357 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f5f5f5;
 }
 
-/* Basic Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Navbar Styles */
+/* Navbar */
+/* Navbar */
 .navbar {
-    background-color: #333;
-    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Change to a darker color for better contrast */
+    padding: 15px 30px; /* Added some padding to create space */
+    color: white;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .navbar .name {
-    color: #fff;
     font-size: 24px;
-    margin-left: 20px;
-    display: inline-block;
+    font-weight: bold;
+    margin-right: auto; /* Align the name to the left */
 }
 
 .navbar ul {
-    list-style: none;
-    text-align: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Added space between items */
 }
 
 .navbar ul li {
-    display: inline-block;
-    margin: 0 15px;
+    margin: 0;
 }
 
 .navbar ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-    background-color: #4CAF50;
+    color: #007bff; /* Blue color on hover */
 }
-.navbar a:hover {
-    color: #007bff;
-    transition: color 0.3s ease;
+
+/* Adjust resume link in navbar */
+.navbar ul li a.resume {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between the text and icon */
+}
+
+/* Hover effect on nav items */
+.navbar ul li a:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+.navbar .name {
+    font-size: 28px; /* Increased the font size for a larger name */
+}
+
+/* Adjust logo icon for better appearance in the navbar */
+.navbar ul li a img {
+    margin-left: 5px; /* Add space to the left of the icon */
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Home Section */
+
 .home {
     text-align: center;
-    padding: 100px 0;
-    background-color: #fff;
+    padding: 60px 20px; /* Reduced the padding to make the section smaller */
+    background-color: #007bff;
+    color: white;
 }
 
 .home h1 {
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 36px; /* Reduced the font size for the header */
+    margin-bottom: 20px; /* Reduced margin to make the section tighter */
 }
 
 .home p {
-    font-size: 24px;
-    color: #555;
-    margin-bottom: 20px;
+    font-size: 20px; /* Reduced the font size for the text */
+    margin-bottom: 30px; /* Reduced the margin below the paragraph */
+}
+
+.home .img {
+    border-radius: 50%;
+    width: 300px; /* Reduced the image size */
+    height: 300px; /* Reduced the image size */
+    object-fit: cover;
+    margin-bottom: 20px; /* Reduced margin to tighten the section further */
 }
 
 .social-links a {
-    margin: 0 10px;
+    margin: 0 15px; /* Adjusted margin to fit well with the smaller section */
     display: inline-block;
+}
+
+.social-links img {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+.social-links a {
+    margin: 0 20px; /* Added more space between social icons */
+    display: inline-block;
+}
+
+.social-links img {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* About Section */
 .about {
-    background-color: #f1f1f1;
-    padding: 80px 0;
+    background-color: #fff;
+    padding: 60px 20px; /* Reduced padding to make the section smaller */
+    text-align: center;
+    margin-bottom: 40px; /* Added margin for spacing between sections */
 }
 
 .about h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 28px; /* Slightly smaller font size */
+    font-weight: 600; /* More professional font weight */
+    color: #333; /* Darker color for readability */
+    margin-bottom: 30px; /* Reduced the space below the title */
 }
 
 .about-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Reduced the gap between the image and text */
+    margin-top: 20px;
 }
 
 .about-image img {
+    width: 180px; /* Reduced image size */
+    height: 180px; /* Consistent height */
     border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better image presentation */
+}
+
+.about-text {
+    max-width: 600px; /* Limit the width of the text block for a more controlled layout */
+    font-size: 16px; /* Smaller font size for readability */
+    line-height: 1.6; /* Proper line height for readability */
+    color: #555; /* Slightly lighter text color for better contrast */
+    text-align: left; /* Align the text left for a more professional look */
+    margin-top: 10px;
 }
 
 .about-text p {
-    font-size: 18px;
-    line-height: 1.8;
+    margin-bottom: 20px; /* Added space after the paragraph */
+}
+
+/* Adjusting the button in about section */
+.about-text button {
+    background-color: #4c79a8; /* Blue button color */
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.about-text button:hover {
+    background-color: #072444; /* Darker shade on hover */
 }
 
 /* Skills Section */
 .skills {
-    background-color: #fff;
-    padding: 80px 0;
+ 
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+    
 }
 
 .skills h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 30px;
+    
+    margin-bottom: 40px;
 }
 
 .skill-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
 }
 
 .skill {
-    margin: 20px;
-    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill img {
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
-/* Projects Section */
+.skill:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Section */
 .projects {
-    background-color: #f1f1f1;
-    padding: 80px 0;
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px; /* Added margin to provide spacing from other sections */
 }
 
 .projects h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 600; /* Slightly more professional font weight */
+    margin-bottom: 40px;
+    color: #333;
 }
 
 .project-list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Increased gap for better spacing */
 }
 
 .project {
-    background-color: #fff;
+    background-color: #f5f5f5;
     padding: 20px;
-    margin: 15px;
-    width: 45%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.project h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+    text-align: center;
+    position: relative;
 }
 
 .project img {
     width: 100%;
-    border-radius: 8px;
+    height: 200px; /* Set fixed height for image consistency */
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+    border-radius: 8px; /* Rounded corners for image */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Added transition for smooth effect */
 }
 
-.project div {
-    margin-top: 15px;
+.project:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+}
+
+.project:hover img {
+    transform: scale(1.1); /* Slight zoom effect on the image itself */
+}
+
+.project h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555; /* Lighter color for better readability */
 }
 
 .project a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 16px;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: #007bff;
+    padding: 10px 15px; 
+    border: solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.project a:hover {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none; /* Remove underline on hover */
+    
+}
+
+.project a:focus {
+    outline: none; /* Remove the focus outline */
+}
+
 
 /* Contact Section */
 .contact {
-    background-color: #fff;
-    padding: 80px 0;
+    background-color: #f5f5f5;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .contact h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
-.contact p {
+.contact h4 {
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
     background-color: #333;
-    color: #fff;
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
 }
 
 footer p {
     font-size: 16px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .navbar ul {
-        text-align: left;
-        margin-top: 10px;
-    }
-
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skill-list {
-        flex-direction: column;
-    }
-
-    .project-list {
-        flex-direction: column;
-    }
-
-    .project {
-        width: 80%;
-    }
-}
-/* Modal overlay */
+/* Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -268,6 +387,7 @@ footer p {
 .modal a {
     color: #007bff;
     text-decoration: none;
+    
 }
 
 .modal a:hover {
@@ -285,4 +405,41 @@ footer p {
 
 .close-modal:hover {
     background-color: #d32f2f;
+}
+
+/* Navbar Resume Link Styling */
+.navbar ul li.resume {
+    margin-left: 30px; /* Added more space for the resume item */
+}
+
+.navbar ul li.resume a {
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li.resume a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-list {
+        flex-direction: column;
+    }
+
+    .skill-list {
+        flex-direction: column;
+    }
 }
