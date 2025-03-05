@@ -8,23 +8,24 @@ body {
 }
 
 /* Navbar */
-/* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-betwee;
     align-items: center;
-    background-color: #333; /* Change to a darker color for better contrast */
-    padding: 15px 30px; /* Added some padding to create space */
+    background-color: #333;
+    padding: 15px;
     color: white;
     position: sticky;
     top: 0;
     z-index: 100;
+    margin: auto;
+    flex-wrap: wrap; /* Ensures the navbar items wrap on smaller screens */
 }
 
 .navbar .name {
     font-size: 24px;
     font-weight: bold;
-    margin-right: auto; /* Align the name to the left */
+    margin-right: 20px;
 }
 
 .navbar ul {
@@ -32,11 +33,12 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 30px; /* Added space between items */
+    justify-content: center;
+    margin: auto;
 }
 
 .navbar ul li {
-    margin: 0;
+    margin: 0 20px;
 }
 
 .navbar ul li a {
@@ -49,35 +51,6 @@ body {
 .navbar ul li a:hover {
     color: #007bff; /* Blue color on hover */
 }
-
-/* Adjust resume link in navbar */
-.navbar ul li a.resume {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Space between the text and icon */
-}
-
-/* Hover effect on nav items */
-.navbar ul li a:hover {
-    color: #007bff; /* Blue color on hover */
-}
-
-.navbar .name {
-    font-size: 28px; /* Increased the font size for a larger name */
-}
-
-/* Adjust logo icon for better appearance in the navbar */
-.navbar ul li a img {
-    margin-left: 5px; /* Add space to the left of the icon */
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
-
-.navbar ul li a:hover img {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
 /* Home Section */
 
 .home {
