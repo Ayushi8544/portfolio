@@ -54,3 +54,22 @@ function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('active');
 }
+
+function downloadAndOpen() {
+    // Google Drive direct download link
+    const resumeDownloadUrl = "https://drive.google.com/uc?export=download&id=1pFpoig5O61RJhRChzUCYZ2hN3G_i3eQ1"; // Use your file ID
+    
+    // Open the resume link in a new tab
+    window.open("https://drive.google.com/file/d/1pFpoig5O61RJhRChzUCYZ2hN3G_i3eQ1/view?usp=sharing", "_blank");
+
+    // Create a dynamic link to download the resume
+    const link = document.createElement('a');
+    link.href = resumeDownloadUrl;  // Direct download URL
+    link.download = "Resume.pdf"; // Optional: Change the filename as needed
+    
+    // Append the link to the body, trigger a click to start the download, and remove it after the click
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); // Clean up
+}
+
