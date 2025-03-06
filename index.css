@@ -3,19 +3,22 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    padding-top: 60px; /* Add padding to the top to avoid content overlap with fixed navbar */
 }
 
 .navbar {
-    z-index: +100;
-    position: fixed;
+    z-index: 100;
+    position: fixed; /* Fixed position to make it sticky */
     top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #333;
     color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to make the navbar stand out */
 }
 
 .name {
@@ -24,7 +27,6 @@ body {
 }
 
 .nav-links {
-
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -87,6 +89,12 @@ body {
     color: #007bff;
     transform: scale(1.1);
 }
+
+/* Add spacing for content below navbar */
+section {
+    padding-top: 80px; /* Ensure there is enough space for the sticky navbar */
+}
+
 /* Home Section */
 
 .home {
@@ -94,6 +102,7 @@ body {
     padding: 60px 20px; /* Reduced the padding to make the section smaller */
     background-color: #007bff;
     color: white;
+    margin-top: 0%;
 }
 
 .home h1 {
