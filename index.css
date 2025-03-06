@@ -204,15 +204,15 @@ body {
     background-color: #f5f5f5;
     padding: 60px 20px;
     text-align: center;
-    
+    flex-direction: column; /* Ensure content is stacked vertically on small screens */
 }
 
 .skills h2 {
     font-size: 30px;
-    
     margin-bottom: 40px;
 }
 
+/* Skill list container */
 .skill-list {
     display: flex;
     justify-items: center;
@@ -221,6 +221,7 @@ body {
     gap: 20px;
 }
 
+/* Individual skill item */
 .skill {
     width: 100px;
     height: 100px;
@@ -231,16 +232,88 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Skill image */
+.skills {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures content is vertically centered */
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+    flex-direction: column; /* Stack content vertically on mobile */
+}
+
+.skills h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+/* Skill list container */
+.skill-list {
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%; /* Ensure it takes full width */
+}
+
+/* Individual skill item */
+.skill {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; /* Ensures proper alignment of content */
+    justify-content: center;
+    align-items: center; /* Center the content inside each skill box */
+}
+
+/* Skill image */
 .skill img {
     width: 100px;
     height: 100px;
     object-fit: contain;
 }
 
+/* Hover effect on skill items */
 .skill:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .skills {
+        padding: 40px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .skills h2 {
+        font-size: 24px; /* Reduce font size for smaller screens */
+        margin-bottom: 30px;
+    }
+
+    .skill-list {
+        justify-content: center; /* Center content on smaller screens */
+        gap: 15px; /* Reduce the gap between skills */
+    }
+
+    .skill {
+        width: 80px; /* Adjust skill size for mobile screens */
+        height: 80px;
+        padding: 8px;
+    }
+
+    .skill img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
 
 /* Project Section */
 .projects {
