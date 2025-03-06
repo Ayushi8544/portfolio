@@ -50,3 +50,7 @@ function showProjectDetails(projectName) {
         document.querySelector('.modal-overlay').remove();
     });
 }
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('show');
+}
