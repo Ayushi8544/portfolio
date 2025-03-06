@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    padding-top: 60px; /* Add padding to the top to avoid content overlap with fixed navbar */
+    padding-top: 0; /* Add padding to the top to avoid content overlap with fixed navbar */
 }
 
 .navbar {
@@ -15,43 +15,36 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 17px;
     background-color: #333;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow to make the navbar stand out */
-    margin-right: 20px;
 }
 
 .name {
     font-size: 24px;
-    /* margin: 0; */
+    margin: 0;
     margin-left: 20px;
-   color: #fff;
-    
-
-}
-.resumes{
-    margin-right: 20px;
-    
+    color: #fff;
 }
 
 .nav-links {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    
     display: flex;
+    justify-content: flex-end; /* Align the links to the right */
+    flex-grow: 1; /* Make the links section grow and push the hamburger icon to the left */
+    margin-right: 25px;
 }
 
 .nav-links li {
-    
     padding: 10px 20px;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
-    
 }
 
 /* Hamburger menu */
@@ -62,8 +55,11 @@ body {
     justify-content: space-between;
     width: 30px;
     height: 25px;
+    z-index: 200; /* Make sure it is above the nav links */
+    margin-right: 50px;
 }
 
+/* Hamburger menu lines */
 .hamburger-menu .line {
     height: 4px;
     width: 100%;
@@ -79,6 +75,10 @@ body {
         width: 100%;
         text-align: center;
         background-color: #333;
+        position: absolute;
+        top: 60px; /* Position it below the navbar */
+        left: 0;
+        z-index: 100; /* Make sure it's behind the hamburger menu */
     }
     
     .nav-links li {
@@ -102,9 +102,10 @@ body {
     transform: scale(1.1);
 }
 
+
 /* Add spacing for content below navbar */
 section {
-    padding-top: 80px; /* Ensure there is enough space for the sticky navbar */
+    padding-top: 0; /* Ensure there is enough space for the sticky navbar */
 }
 
 /* Home Section */
