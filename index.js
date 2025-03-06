@@ -52,5 +52,5 @@ function showProjectDetails(projectName) {
 }
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('show');
+    navLinks.classList.toggle('active');
 }

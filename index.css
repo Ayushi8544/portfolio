@@ -1,56 +1,87 @@
 /* General Styles */
+/* Base Styling */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-}
-
-body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #333;
+    color: white;
 }
 
-.navbar .name {
-    color: white;
+.name {
     font-size: 24px;
+    margin: 0;
 }
 
 .nav-links {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 20px;
 }
 
 .nav-links li {
-    display: inline;
+    padding: 10px 20px;
 }
 
-.nav-links a {
+.nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    position: relative; /* For positioning pseudo-element */
-    padding: 5px 0; /* Add some padding for better effect */
-    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger-menu .line {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Mobile view - Initially hide the nav links */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+    }
+    
+    .nav-links li {
+        padding: 10px;
+    }
+
+    /* Show hamburger menu */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Show menu when it has the 'active' class */
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 /* Hover effect */
 .nav-links a:hover {
-    color: #007bff; /* Change the text color on hover */
-    transform: scale(1.1); /* Slight zoom effect */
+    color: #007bff;
+    transform: scale(1.1);
 }
-
 /* Home Section */
 
 .home {
@@ -168,7 +199,8 @@ body {
 
 /* Skills Section */
 .skills {
- 
+    display: flex;
+    justify-content: center;
     background-color: #f5f5f5;
     padding: 60px 20px;
     text-align: center;
@@ -183,6 +215,7 @@ body {
 
 .skill-list {
     display: flex;
+    justify-items: center;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -211,6 +244,8 @@ body {
 
 /* Project Section */
 .projects {
+    display: flex;
+    justify-content: center;
     background-color: #fff;
     padding: 60px 20px;
     text-align: center;
@@ -410,6 +445,8 @@ footer p {
     .navbar ul {
         flex-direction: column;
         align-items: center;
+        display: none;
+
     }
 
     .about-content {
